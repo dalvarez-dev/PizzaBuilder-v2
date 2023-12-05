@@ -9,6 +9,8 @@ import android.widget.RadioButton;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
 
     Pizza pizza;
@@ -25,7 +27,36 @@ public class MainActivity extends AppCompatActivity {
         total = findViewById(R.id.total);
         delivery = findViewById(R.id.deliveryNote);
     }
+    public void toppingRandomizer(View view){
+        CheckBox topping1 = findViewById(R.id.checkBox1);
+        CheckBox topping2 = findViewById(R.id.checkBox2);
+        CheckBox topping3 = findViewById(R.id.checkBox3);
 
+        topping1.setChecked(false);
+        topping2.setChecked(false);
+        topping3.setChecked(false);
+
+        int randomTopping = new Random().nextInt(3);
+
+        for(int i=0; i< randomTopping; i++){
+            int randomCheckbox = new Random().nextInt(3);
+
+            switch(randomCheckbox){
+                case 0:
+                    topping1.setChecked(true);
+                break;
+
+                case 1:
+                    topping2.setChecked(true);
+                break;
+
+                case 2:
+                    topping3.setChecked(true);
+                break;
+            }
+        }
+        updateTotalPrice();
+    }
     public void radioSelect(View view) {
         // Is button selected?
         boolean selected = ((RadioButton) view).isChecked();
