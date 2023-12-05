@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/CurrentOrder"
+        android:layout_width="199dp"
+        android:layout_height="72dp"
+        android:gravity="center"
+        android:text="@string/currentorder"
+        android:textColor="@color/red"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/address_hc"
+        android:layout_width="157dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="56dp"
+        android:gravity="left"
+        android:text="@string/address"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.224"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CurrentOrder" />
+
+    <EditText
+        android:id="@+id/given_address_edit_text"
+        android:layout_width="201dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="16dp"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.271"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/address_hc" />
+    <!-- Toppings list -->
+    <TextView
+        android:id="@+id/order"
+        android:layout_width="203dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="16dp"
+        android:text=""
+        app:layout_constraintEnd_toStartOf="@+id/price1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/given_address_edit_text" />
+
+    <TextView
+        android:id="@+id/price1"
+        android:layout_width="66dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="220dp"
+        android:layout_marginEnd="28dp"
+        android:gravity="center"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tax"
+        android:layout_width="203dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/tax"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.254"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subtotal" />
+
+    <TextView
+        android:id="@+id/subtotal"
+        android:layout_width="203dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/subtotal"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.254"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <Button
+        android:id="@+id/backtobuilderbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/backtobuilder"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.17"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/total"
+        app:layout_constraintVertical_bias="0.303" />
+
+    <TextView
+        android:id="@+id/total"
+        android:layout_width="203dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/total"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.254"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tax" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_marginTop="444dp"
+        android:background="#4CAF50"
+        android:gravity="center_horizontal"
+        android:text=""
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/paymentmethod_edit_text"
+        android:layout_width="119dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="69dp"
+        android:text=""
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintEnd_toStartOf="@+id/expdate_edit_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/paymentmethod" />
+
+    <TextView
+        android:id="@+id/paymentmethod"
+        android:layout_width="117dp"
+        android:layout_height="21dp"
+        android:layout_marginTop="47dp"
+        android:layout_marginEnd="-1dp"
+        android:text="@string/cardnum"
+        app:layout_constraintEnd_toStartOf="@+id/expdate"
+        app:layout_constraintHorizontal_bias="0.397"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/order" />
+
+    <EditText
+        android:id="@+id/CVV_edit_text"
+        android:layout_width="78dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="66dp"
+        android:text=""
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CVV"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/CVV"
+        android:layout_width="66dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="47dp"
+        android:layout_marginEnd="37dp"
+        android:text="@string/CVV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/price1" />
+
+    <TextView
+        android:id="@+id/expdate"
+        android:layout_width="wrap_content"
+        android:layout_height="22dp"
+        android:layout_marginTop="47dp"
+        android:layout_marginEnd="71dp"
+        android:text="@string/expdate"
+        app:layout_constraintEnd_toStartOf="@+id/CVV"
+        app:layout_constraintTop_toBottomOf="@+id/order" />
+
+    <EditText
+        android:id="@+id/expdate_edit_text"
+        android:layout_width="70dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="67dp"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintEnd_toStartOf="@+id/CVV_edit_text"
+        app:layout_constraintTop_toBottomOf="@+id/expdate"
+        app:layout_constraintVertical_bias="1.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
