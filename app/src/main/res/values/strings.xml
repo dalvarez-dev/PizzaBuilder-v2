@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">PizzaBuilder-v2</string>
+    <string name="currentorder">Current Order</string>
+    <string name="address">Address:</string>
+    <string name="tax">Tax:</string>
+    <string name="subtotal">Subtotal:</string>
+    <string name="backtobuilder">Edit</string>
+    <string name="total">Total:</string>
+    <string name="cardnum">Card Number</string>
+    <string name="expdate">Exp</string>
+    <string name="CVV">CVV</string>
+    <string name="randomizer">Can\'t Decide?</string>
 </resources>
