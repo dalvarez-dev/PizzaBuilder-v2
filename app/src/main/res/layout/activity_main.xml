@@ -165,27 +165,27 @@
         app:layout_constraintStart_toStartOf="@+id/checkBox2"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
+    <Switch
+        android:id="@+id/deliveryNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:onClick="onSwitchSelect"
+        android:text="Yes"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView5"
+        app:layout_constraintStart_toStartOf="@+id/checkBox3" />
+
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="32dp"
         android:text="Delivery?"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/total"
         app:layout_constraintEnd_toStartOf="@+id/deliveryNote" />
-
-    <Switch
-        android:id="@+id/deliveryNote"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:onClick="onSwitchSelect"
-        android:text="Yes"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView5"
-        app:layout_constraintStart_toStartOf="@+id/checkBox3" />
 
     <TextView
         android:id="@+id/total"
@@ -248,10 +248,13 @@
         android:layout_width="wrap_content"
         android:layout_height="69dp"
         android:layout_marginTop="404dp"
+        android:onClick="onClickRandomize"
         android:text="Randomize!"
         android:textSize="17sp"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="16dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.024"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/randomizertext"
@@ -265,5 +268,14 @@
         app:layout_constraintHorizontal_bias="0.022"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <Button
+        android:id="@+id/donebuilding"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/finished"
+        app:layout_constraintEnd_toEndOf="@+id/deliveryNote"
+        app:layout_constraintTop_toBottomOf="@+id/deliveryNote" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
