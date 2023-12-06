@@ -54,6 +54,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/address_hc" />
 
+    <Button
+        android:id="@+id/validateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/given_address_edit_text"
+        app:layout_constraintRight_toRightOf="@+id/given_address_edit_text"
+        tools:layout_editor_absoluteY="233dp"
+        android:text="CHECK ADDRESS"
+        />
+
     <TextView
         android:id="@+id/addressValidationMessage"
         android:layout_width="wrap_content"
