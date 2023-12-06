@@ -69,6 +69,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/given_address_edit_text"
+        app:layout_constraintStart_toStartOf="@+id/given_address_edit_text"
         android:layout_below="@id/given_address_edit_text"
         android:text=""
         android:textColor="@android:color/holo_red_dark"/>
