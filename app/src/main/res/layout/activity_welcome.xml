@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    >
+    android:foregroundTintMode="add">
+
+
 
     <FrameLayout
         android:id="@+id/frameLayout"
@@ -25,44 +27,32 @@
     </FrameLayout>
 
     <ImageView
-        android:layout_width="300dp"
-        android:layout_marginBottom="48dp"
-        android:layout_height="wrap_content"
+        android:layout_width="250dp"
+        android:layout_height="300dp"
         android:adjustViewBounds="true"
-        android:scaleType="fitStart"
-        android:src="@drawable/logo"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button9"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
-        android:text="Order"
-        app:layout_constraintBottom_toTopOf="@+id/button8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/button8"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
-        android:text="Get Delivered"
+        android:scaleType="fitCenter"
+        android:src="@drawable/logoo"
+        android:layout_marginTop="130dp"
         app:layout_constraintBottom_toTopOf="@+id/titlebutton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/titlebutton"
+        app:layout_constraintStart_toStartOf="@+id/titlebutton"
+        app:layout_constraintTop_toTopOf="@+id/frameLayout" />
 
     <Button
         android:id="@+id/titlebutton"
-        android:layout_width="150dp"
+        style="@style/Widget.AppCompat.Button.Small"
+        android:layout_width="220dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="36dp"
+        android:layout_marginRight="60dp"
+        android:layout_marginBottom="200dp"
+        android:backgroundTint="#7E1919"
         android:onClick="onWelcomeCreateClick"
+        android:strokeColor="@color/red"
         android:text="Build Pizza"
-        android:textColor="#C80F0F"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/frameLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
