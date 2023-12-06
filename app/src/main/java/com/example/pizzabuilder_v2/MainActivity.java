@@ -15,10 +15,12 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    Pizza pizza;
+    static Pizza pizza;
     TextView total;
     static double total_price;
     TextView delivery;
+
+    static int size;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,13 +77,13 @@ public class MainActivity extends AppCompatActivity {
         // check which button was selected
         if (view.getId() == R.id.radioButton1) {
             if (selected)
-                pizza.setPizza_size_price(8);
+                pizza.setPizza_size_price(8); size=0;
         } else if (view.getId() == R.id.radioButton2) {
             if (selected)
-                pizza.setPizza_size_price(10);
+                pizza.setPizza_size_price(10); size=1;
         } else if (view.getId() == R.id.radioButton3) {
             if (selected)
-                pizza.setPizza_size_price(12);
+                pizza.setPizza_size_price(12); size=2;
         }
         // total.setText("Total Price: $" + String.format("%.2f", pizza.getPizza_size_price()));
         updateTotalPrice(); // this method replaces the statement above to calculate the cost correctly
@@ -117,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
         total.setText("Total Price: $" + String.format("%.2f", calculate_total()));
     }
 
-    public double calculate_total() {
+    public static double calculate_total() {
         total_price = pizza.getPizza_size_price() + pizza.getCheese_price() + pizza.getMeat_price()
                 + pizza.getVeggies_price();
         return total_price;
@@ -133,10 +135,14 @@ public class MainActivity extends AppCompatActivity {
             delivery.setText("");
         }
 
-        public static double getTotal_price(){
+        public static double getSubtotal() {
+            double subtotal = calculate_total();
 
-        return total_price;
+            return subtotal;
+        }
 
+        public static int getSize(){
+            return size;
         }
 
 
