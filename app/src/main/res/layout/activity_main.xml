@@ -248,7 +248,7 @@
         android:layout_width="wrap_content"
         android:layout_height="69dp"
         android:layout_marginTop="404dp"
-        android:onClick="onClickRandomize"
+        android:onClick="toppingRandomizer"
         android:text="Randomize!"
         android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
