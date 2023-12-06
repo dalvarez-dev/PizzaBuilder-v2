@@ -11,4 +11,5 @@
     <string name="CVV">CVV</string>
     <string name="randomizer">Can\'t Decide?</string>
     <string name="finished">Done</string>
+    <string name="card_number">Card Number</string>
 </resources>
