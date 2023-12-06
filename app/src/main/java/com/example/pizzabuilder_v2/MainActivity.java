@@ -2,8 +2,10 @@ package com.example.pizzabuilder_v2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.Switch;
@@ -15,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
     Pizza pizza;
     TextView total;
-    double total_price;
+    static double total_price;
     TextView delivery;
 
     @Override
@@ -26,6 +28,16 @@ public class MainActivity extends AppCompatActivity {
         pizza = new Pizza();
         total = findViewById(R.id.total);
         delivery = findViewById(R.id.deliveryNote);
+
+        Button donebutton= (Button)findViewById(R.id.donebuilding);
+        donebutton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                // click handling code
+                Intent intent = new Intent(MainActivity.this, Payment.class);
+                startActivity(intent);
+            }
+        });
     }
     public void toppingRandomizer(View view){
         CheckBox topping1 = findViewById(R.id.checkBox1);
@@ -120,4 +132,15 @@ public class MainActivity extends AppCompatActivity {
         else
             delivery.setText("");
         }
-}
+
+        public static double getTotal_price(){
+
+        return total_price;
+
+        }
+
+
+
+
+
+}//end class

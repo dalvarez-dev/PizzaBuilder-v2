@@ -16,6 +16,9 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
+            android:name=".Payment"
+            android:exported="false" />
+        <activity
             android:name=".WelcomeActivity"
             android:exported="true">
             <intent-filter>
