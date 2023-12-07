@@ -71,8 +71,24 @@
             app:layout_constraintHorizontal_bias="0.137"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/CurrentOrder" />
+        <Button
+            android:id="@+id/validateButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/given_address_edit_text"
+            app:layout_constraintLeft_toRightOf="@id/given_address_edit_text"
+            android:text="Check Address"
+            />
 
-
+        <TextView
+            android:id="@+id/addressValidationMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/given_address_edit_text"
+            app:layout_constraintStart_toStartOf="@id/given_address_edit_text"
+            android:text=""
+            android:textColor="@android:color/holo_red_dark"
+            />
         <EditText
             android:id="@+id/exp_edit_text"
             android:layout_width="70dp"
