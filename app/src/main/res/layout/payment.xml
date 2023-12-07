@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/CurrentOrder"
@@ -54,48 +59,57 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/address_hc" />
 
-    <Button
-        android:id="@+id/validateButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/given_address_edit_text"
-        app:layout_constraintLeft_toRightOf="@+id/given_address_edit_text"
-        tools:layout_editor_absoluteY="233dp"
-        android:text="CHECK ADDRESS"
-        />
-
-    <TextView
-        android:id="@+id/addressValidationMessage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/given_address_edit_text"
-        app:layout_constraintStart_toStartOf="@+id/given_address_edit_text"
-        android:layout_below="@id/given_address_edit_text"
-        android:text=""
-        android:textColor="@android:color/holo_red_dark"/>
-
-    <TextView
-        android:id="@+id/address_hc"
-        android:layout_width="157dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="12dp"
-        android:gravity="left"
-        android:text="@string/address"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.137"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/CurrentOrder" />
-
         <TextView
-            android:id="@+id/CVV"
-            android:layout_width="66dp"
-            android:layout_height="20dp"
-            android:layout_marginTop="148dp"
-            android:layout_marginEnd="36dp"
-            android:text="@string/CVV"
+            android:id="@+id/address_hc"
+            android:layout_width="157dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="12dp"
+            android:gravity="left"
+            android:text="@string/address"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/price1" />
+            app:layout_constraintHorizontal_bias="0.137"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/CurrentOrder" />
+
+
+        <EditText
+            android:id="@+id/exp_edit_text"
+            android:layout_width="70dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="170dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="67dp"
+            android:background="@drawable/edit_text_border"
+            android:gravity="center"
+
+            android:hint="Exp"
+            android:inputType="datetime"
+            app:layout_constraintBottom_toTopOf="@+id/textView4"
+            app:layout_constraintEnd_toStartOf="@+id/CVV_edit_text"
+            app:layout_constraintHorizontal_bias="0.355"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/expdate"
+            app:layout_constraintVertical_bias="0.023" />
+
+        <EditText
+            android:id="@+id/CVV_edit_text"
+            android:layout_width="78dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="28dp"
+            android:layout_marginBottom="66dp"
+            android:background="@drawable/edit_text_border"
+            android:gravity="center"
+            android:hint="CVV"
+            android:inputType="number"
+            android:maxLength="3"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/textView4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/CVV"
+            app:layout_constraintVertical_bias="0.0" />
 
         <EditText
             android:id="@+id/card_edit_text"
@@ -104,126 +118,63 @@
             android:layout_marginTop="16dp"
             android:layout_marginBottom="69dp"
             android:background="@drawable/edit_text_border"
+            android:gravity="center"
             android:hint="@string/card_number"
             android:inputType="number"
-            android:gravity="center"
             android:maxLength="16"
             android:textSize="15sp"
             app:layout_constraintBottom_toTopOf="@+id/textView4"
-            app:layout_constraintEnd_toStartOf="@+id/exp_edit_text"
-            app:layout_constraintHorizontal_bias="0.523"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.089"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/paymentmethod"
             app:layout_constraintVertical_bias="0.0" />
 
         <TextView
-            android:id="@+id/expdate"
-            android:layout_width="wrap_content"
-            android:layout_height="22dp"
-            android:layout_marginTop="144dp"
-            android:layout_marginEnd="64dp"
-            android:text="@string/expdate"
-            app:layout_constraintEnd_toStartOf="@+id/CVV"
-            app:layout_constraintTop_toBottomOf="@+id/order" />
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_marginTop="408dp"
+            android:background="@color/red"
+            android:gravity="center_horizontal"
+            android:text=""
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/CVV"
+            android:layout_width="66dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="84dp"
+            android:layout_marginEnd="36dp"
+            android:text="@string/CVV"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/price1" />
 
         <TextView
             android:id="@+id/paymentmethod"
             android:layout_width="117dp"
             android:layout_height="21dp"
-            android:layout_marginTop="144dp"
+            android:layout_marginTop="80dp"
             android:layout_marginEnd="-1dp"
             android:text="@string/cardnum"
             app:layout_constraintEnd_toStartOf="@+id/expdate"
-            app:layout_constraintHorizontal_bias="0.454"
+            app:layout_constraintHorizontal_bias="0.288"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/order" />
 
-        <EditText
-            android:id="@+id/exp_edit_text"
-            android:layout_width="70dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="67dp"
-            android:background="@drawable/edit_text_border"
-            android:gravity="center"
-            android:hint="Exp"
-
-            android:inputType="datetime"
-            app:layout_constraintBottom_toTopOf="@+id/textView4"
-            app:layout_constraintEnd_toStartOf="@+id/CVV_edit_text"
-            app:layout_constraintTop_toBottomOf="@+id/expdate"
-            app:layout_constraintVertical_bias="0.023" />
-
         <TextView
-            android:id="@+id/subtotal"
-            android:layout_width="203dp"
-            android:layout_height="31dp"
-            android:layout_marginTop="40dp"
-            android:text="@string/subtotal"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.101"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView4" />
-
-        <TextView
-            android:id="@+id/subtotaldata"
-            android:layout_width="60dp"
-            android:layout_height="31dp"
-            android:layout_marginTop="40dp"
-            android:gravity="center"
-            android:text=""
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.135"
-            app:layout_constraintStart_toEndOf="@+id/subtotal"
-            app:layout_constraintTop_toBottomOf="@+id/textView4"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <TextView
-            android:id="@+id/taxdata"
-            android:layout_width="60dp"
-            android:layout_height="31dp"
-            android:layout_marginTop="40dp"
-            android:gravity="center"
-            android:text=""
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.135"
-            app:layout_constraintStart_toEndOf="@+id/tax"
-            app:layout_constraintTop_toBottomOf="@+id/textView4"
-            app:layout_constraintVertical_bias="0.274" />
-
-        <TextView
-            android:id="@+id/finaldata"
-            android:layout_width="60dp"
-            android:layout_height="31dp"
-            android:layout_marginStart="11dp"
-            android:layout_marginTop="40dp"
-            android:gravity="center"
-            android:text=""
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/total"
-            app:layout_constraintTop_toBottomOf="@+id/textView4"
-            app:layout_constraintVertical_bias="0.534" />
-
-        <TextView
-            android:id="@+id/total"
-            android:layout_width="203dp"
-            android:layout_height="31dp"
-            android:layout_marginTop="8dp"
-            android:text="@string/total"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.101"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tax" />
+            android:id="@+id/expdate"
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="80dp"
+            android:text="@string/expdate"
+            app:layout_constraintEnd_toStartOf="@+id/CVV"
+            app:layout_constraintTop_toBottomOf="@+id/order" />
 
         <TextView
             android:id="@+id/tax"
@@ -233,9 +184,55 @@
             android:text="@string/tax"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.101"
+            app:layout_constraintHorizontal_bias="0.105"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/subtotal" />
+            app:layout_constraintTop_toBottomOf="@+id/tip" />
+
+        <TextView
+            android:id="@+id/finaldata"
+            android:layout_width="60dp"
+            android:layout_height="31dp"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="40dp"
+            android:gravity="center"
+            android:maxLength="6"
+            android:text=""
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.009"
+            app:layout_constraintStart_toEndOf="@+id/total"
+            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            app:layout_constraintVertical_bias="0.753" />
+
+        <TextView
+            android:id="@+id/taxdata"
+            android:layout_width="60dp"
+            android:layout_height="31dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="40dp"
+            android:gravity="center"
+            android:maxLength="5"
+            android:text=""
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.138"
+            app:layout_constraintStart_toEndOf="@+id/tax"
+            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            app:layout_constraintVertical_bias="0.62" />
+
+        <TextView
+            android:id="@+id/total"
+            android:layout_width="203dp"
+            android:layout_height="31dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/total"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.115"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tax" />
 
         <Button
             android:id="@+id/backtobuilderbutton"
@@ -247,41 +244,139 @@
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.058"
+            app:layout_constraintHorizontal_bias="0.068"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/total"
-            app:layout_constraintVertical_bias="1.0" />
-
-        <EditText
-            android:id="@+id/CVV_edit_text"
-            android:layout_width="78dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="28dp"
-            android:layout_marginBottom="66dp"
-            android:background="@drawable/edit_text_border"
-            android:hint="CVV"
-            android:maxLength="3"
-            android:textSize="15sp"
-            app:layout_constraintBottom_toTopOf="@+id/textView4"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/CVV"
             app:layout_constraintVertical_bias="0.0" />
 
         <TextView
-            android:id="@+id/textView4"
-            android:layout_width="match_parent"
-            android:layout_height="10dp"
-            android:layout_marginTop="472dp"
-            android:background="@color/red"
-            android:gravity="center_horizontal"
+            android:id="@+id/subtotal"
+            android:layout_width="203dp"
+            android:layout_height="31dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="135dp"
+            android:layout_marginEnd="186dp"
+            android:layout_marginBottom="184dp"
+            android:text="@string/subtotal"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+        <TextView
+            android:id="@+id/tip"
+            android:layout_width="203dp"
+            android:layout_height="31dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/tip"
+            android:maxLength="6"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.105"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/subtotal" />
+
+        <Button
+            android:id="@+id/finalize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/red"
+            android:text="@string/complete_order"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.91"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/total"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/subtotaldata"
+            android:layout_width="60dp"
+            android:layout_height="31dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="36dp"
+            android:gravity="center"
+            android:maxLength="6"
             android:text=""
-            android:textSize="25sp"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.145"
+            app:layout_constraintStart_toEndOf="@+id/subtotal"
+            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            app:layout_constraintVertical_bias="0.353" />
+
+        <TextView
+            android:id="@+id/tipdata"
+            android:layout_width="60dp"
+            android:layout_height="31dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="36dp"
+            android:gravity="center"
+            android:maxLength="6"
+            android:text=""
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.129"
+            app:layout_constraintStart_toEndOf="@+id/subtotal"
+            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            app:layout_constraintVertical_bias="0.485" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="26dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.506"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            app:layout_constraintVertical_bias="0.0">
+
+            <RadioButton
+                android:id="@+id/fifteen"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:text="@string/fifteenpercent" />
+
+            <RadioButton
+                android:id="@+id/twenty"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="@string/twentypercent" />
+
+            <RadioButton
+                android:id="@+id/custom"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="@string/custom" />
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/customtip_edit"
+            android:layout_width="76dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="229dp"
+            android:layout_marginEnd="124dp"
+            android:layout_marginBottom="266dp"
+            android:gravity="center"
+            android:text="@string/custom_tip"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+            app:layout_constraintVertical_bias="0.0"
+            tools:visibility="invisible" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
+</ScrollView>

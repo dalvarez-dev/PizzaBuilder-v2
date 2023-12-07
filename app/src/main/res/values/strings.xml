@@ -12,4 +12,10 @@
     <string name="randomizer">Can\'t Decide?</string>
     <string name="finished">Done</string>
     <string name="card_number">Card Number</string>
+    <string name="complete_order">Complete Order</string>
+    <string name="tip">Tip:</string>
+    <string name="fifteenpercent">15%</string>
+    <string name="twentypercent">20%</string>
+    <string name="custom">Custom</string>
+    <string name="custom_tip">Custom Tip</string>
 </resources>
