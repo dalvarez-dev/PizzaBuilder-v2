@@ -16,6 +16,8 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
 
     static Pizza pizza;
+
+    static boolean deliveryselected=false;
     TextView total;
     static double total_price;
     TextView delivery;
@@ -73,24 +75,19 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
     }
-
-
-
     public void radioSelect(View view) {
         // Is button selected?
         boolean selected = ((RadioButton) view).isChecked();
         // check which button was selected
         if (view.getId() == R.id.radioButton1) {
             if (selected)
-                pizza.setPizza_size_price(8); size=0;
-
+                pizza.setPizza_size_price(8); size=1;
         } else if (view.getId() == R.id.radioButton2) {
             if (selected)
-                pizza.setPizza_size_price(10); size=1;
-
+                pizza.setPizza_size_price(10); size=2;
         } else if (view.getId() == R.id.radioButton3) {
             if (selected)
-                pizza.setPizza_size_price(12); size=2;
+                pizza.setPizza_size_price(12); size=3;
         }
         // total.setText("Total Price: $" + String.format("%.2f", pizza.getPizza_size_price()));
         updateTotalPrice(); // this method replaces the statement above to calculate the cost correctly
@@ -136,8 +133,9 @@ public class MainActivity extends AppCompatActivity {
     public void onSwitchSelect(View view) {
 
         Switch switchButton = (Switch) view;
-        if (switchButton.isChecked())
+        if (switchButton.isChecked()){
             delivery.setText("Delivery required!");
+            deliveryselected=true;}
         else
             delivery.setText("");
         }
@@ -152,6 +150,8 @@ public class MainActivity extends AppCompatActivity {
             return size;
         }
 
+        public static boolean getDelivery(){
+            return deliveryselected;}
 
 
 
