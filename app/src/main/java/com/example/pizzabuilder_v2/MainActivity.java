@@ -41,36 +41,41 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    public void toppingRandomizer(View view){
-        CheckBox topping1 = findViewById(R.id.checkBox1);
-        CheckBox topping2 = findViewById(R.id.checkBox2);
-        CheckBox topping3 = findViewById(R.id.checkBox3);
+    public void toppingRandomizer(View view) {
+            CheckBox topping1 = findViewById(R.id.checkBox1);
+            CheckBox topping2 = findViewById(R.id.checkBox2);
+            CheckBox topping3 = findViewById(R.id.checkBox3);
 
-        topping1.setChecked(false);
-        topping2.setChecked(false);
-        topping3.setChecked(false);
+            topping1.setChecked(false);
+            topping2.setChecked(false);
+            topping3.setChecked(false);
 
-        int randomTopping = new Random().nextInt(3);
+            int randomTopping = new Random().nextInt(3);
 
-        for(int i=0; i< randomTopping; i++){
-            int randomCheckbox = new Random().nextInt(3);
+            for (int i = 0; i < randomTopping; i++) {
+                int randomCheckbox = new Random().nextInt(3);
 
-            switch(randomCheckbox){
-                case 0:
-                    topping1.setChecked(true);
-                break;
+                switch (randomCheckbox) {
+                    case 0:
+                        topping1.setChecked(true);
+                        onCheckboxSelect(topping1);
+                        break;
 
-                case 1:
-                    topping2.setChecked(true);
-                break;
+                    case 1:
+                        topping2.setChecked(true);
+                        onCheckboxSelect(topping2);
+                        break;
 
-                case 2:
-                    topping3.setChecked(true);
-                break;
+                    case 2:
+                        topping3.setChecked(true);
+                        onCheckboxSelect(topping3);
+                        break;
+                }
             }
-        }
-        updateTotalPrice();
     }
+
+
+
     public void radioSelect(View view) {
         // Is button selected?
         boolean selected = ((RadioButton) view).isChecked();
@@ -78,9 +83,11 @@ public class MainActivity extends AppCompatActivity {
         if (view.getId() == R.id.radioButton1) {
             if (selected)
                 pizza.setPizza_size_price(8); size=0;
+
         } else if (view.getId() == R.id.radioButton2) {
             if (selected)
                 pizza.setPizza_size_price(10); size=1;
+
         } else if (view.getId() == R.id.radioButton3) {
             if (selected)
                 pizza.setPizza_size_price(12); size=2;
