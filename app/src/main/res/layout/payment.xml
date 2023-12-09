@@ -77,7 +77,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="@id/given_address_edit_text"
             app:layout_constraintLeft_toRightOf="@id/given_address_edit_text"
-            android:text="Check Address"
+            android:text="@string/check_address"
             />
 
         <TextView
@@ -250,21 +250,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tax" />
 
-        <Button
-            android:id="@+id/backtobuilderbutton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:backgroundTint="@color/red"
-            android:text="@string/backtobuilder"
-            android:textColor="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.068"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/total"
-            app:layout_constraintVertical_bias="0.0" />
-
         <TextView
             android:id="@+id/subtotal"
             android:layout_width="203dp"
@@ -332,7 +317,6 @@
             android:layout_marginStart="4dp"
             android:layout_marginTop="36dp"
             android:gravity="center"
-            android:maxLength="6"
             android:text=""
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -356,41 +340,27 @@
             app:layout_constraintVertical_bias="0.0">
 
             <RadioButton
+                android:id="@+id/ten"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:onClick="radioPick"
+                android:text="@string/tenpercent" />
+
+            <RadioButton
                 android:id="@+id/fifteen"
                 android:layout_width="wrap_content"
+                android:onClick="radioPick"
                 android:layout_height="48dp"
                 android:text="@string/fifteenpercent" />
 
             <RadioButton
                 android:id="@+id/twenty"
                 android:layout_width="match_parent"
+                android:onClick="radioPick"
                 android:layout_height="48dp"
                 android:text="@string/twentypercent" />
 
-            <RadioButton
-                android:id="@+id/custom"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:text="@string/custom" />
         </RadioGroup>
-
-        <EditText
-            android:id="@+id/customtip_edit"
-            android:layout_width="76dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="229dp"
-            android:layout_marginEnd="124dp"
-            android:layout_marginBottom="266dp"
-            android:gravity="center"
-            android:text="@string/custom_tip"
-            android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/radioGroup"
-            app:layout_constraintVertical_bias="0.0"
-            tools:visibility="invisible" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -2,18 +2,9 @@ package com.example.pizzabuilder_v2;
 
 
 
-import static com.example.pizzabuilder_v2.R.id.fifteen;
-import static com.example.pizzabuilder_v2.R.id.tipdata;
-
-import android.content.Intent;
 import android.location.Address;
 import android.location.Geocoder;
-import android.graphics.Color;
-import android.graphics.PorterDuff;
 import android.os.Bundle;
-import android.os.Handler;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -23,25 +14,11 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.AsyncTask;
-import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.w3c.dom.Text;
-
 import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.List;
-import java.util.Scanner;
 
 public class Payment extends AppCompatActivity {
 
@@ -53,8 +30,10 @@ public class Payment extends AppCompatActivity {
     private final double taxvalue = .07;
 
     double subtotal, finaltotal, tip, tipvalue;
+
+    View vbutton;
     TextView subtotaldata, taxdata, finaldata, order, address_hc, tipdata;
-    EditText address_edit, card_edit, expiration_edit, CVV_edit, customtip_edit;
+    EditText address_edit, card_edit, expiration_edit, CVV_edit;
 
     EditText addressInput;
 
@@ -77,18 +56,21 @@ public class Payment extends AppCompatActivity {
         tipdata = findViewById(R.id.tipdata);
         finaldata = findViewById(R.id.finaldata);
         address_edit = findViewById(R.id.given_address_edit_text);
-        customtip_edit = findViewById(R.id.customtip_edit);
         card_edit = findViewById(R.id.card_edit_text);
         expiration_edit = findViewById(R.id.exp_edit_text);
         CVV_edit = findViewById(R.id.CVV_edit_text);
+        vbutton = findViewById(R.id.validateButton);
 
-        customtip_edit.setVisibility(View.INVISIBLE);
 
-        /*if (MainActivity.getDelivery()) {
+        address_edit.setVisibility(View.INVISIBLE);
+        address_hc.setVisibility(View.INVISIBLE);
+        vbutton.setVisibility(View.INVISIBLE);
+
+        if (MainActivity.getDelivery()) {
             address_edit.setVisibility(View.VISIBLE);
             address_hc.setVisibility(View.VISIBLE);
-        } else address_hc.setVisibility(View.INVISIBLE);
-        address_edit.setVisibility(View.INVISIBLE);*/
+            vbutton.setVisibility(View.VISIBLE);}
+
 
         Button finalbutton = (Button) findViewById(R.id.finalize);
 
@@ -133,6 +115,9 @@ public class Payment extends AppCompatActivity {
                 validateAddress(addressInput.getText().toString());
             }
         });
+
+
+
     }
 
     public void radioPick(View view) {
@@ -145,10 +130,10 @@ public class Payment extends AppCompatActivity {
         } else if (view.getId() == R.id.twenty) {
             if (selected)
                 tip = .20;
-        } else if (view.getId() == R.id.custom) {
+        } else if (view.getId() == R.id.ten) {
             if (selected)
-                tip = 0;
-            customtip_edit.setVisibility(View.VISIBLE);
+                tip = .10;
+
 
         }
         updateTip();
@@ -157,13 +142,13 @@ public class Payment extends AppCompatActivity {
 
     public void updateTip() {
         tipvalue = subtotal * tip;
-        tipdata.setText("$" + tipvalue);
+        tipdata.setText("$" + String.format("%.2f", tipvalue));
 
     }//end updateTip
 
     public void updateTotal() {
         finaltotal = subtotal + (subtotal * taxvalue) + tipvalue;
-        finaldata.setText("$" + finaltotal);
+        finaldata.setText("$" + String.format("%.2f", finaltotal));
 
     }
 

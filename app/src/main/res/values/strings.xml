@@ -14,8 +14,9 @@
     <string name="card_number">Card Number</string>
     <string name="complete_order">Complete Order</string>
     <string name="tip">Tip:</string>
+    <string name="tenpercent">10%</string>
     <string name="fifteenpercent">15%</string>
     <string name="twentypercent">20%</string>
-    <string name="custom">Custom</string>
     <string name="custom_tip">Custom Tip</string>
+    <string name="check_address">Check Address</string>
 </resources>
